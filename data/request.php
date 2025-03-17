@@ -41,10 +41,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $filename = sanitize_filename($filename);
 
-    $filePath = "data/files/"."/".$filename;
+    $filePath = "data/files/".$filename;
 
     $file = fopen($filePath, "w");
-    fwrite($file, $content)
+    fwrite($file, $content);
+    fclose($file);
 
 }
 ?>
